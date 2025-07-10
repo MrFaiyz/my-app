@@ -35,7 +35,7 @@ export default function Navbar() {
       }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'glass border-b border-white/10' 
+          ? 'bg-white/20 backdrop-blur-md border-b border-white/20' 
           : 'bg-transparent'
       }`}
     >
@@ -47,10 +47,10 @@ export default function Navbar() {
           className="flex items-center gap-2 cursor-pointer group"
         >
           <div className="relative">
-            <Sparkles className="w-8 h-8 text-[#3ac4ec] group-hover:rotate-12 transition-transform duration-300" />
-            <div className="absolute inset-0 w-8 h-8 bg-[#3ac4ec] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+            <Sparkles className="w-8 h-8 text-blue-500 group-hover:rotate-12 transition-transform duration-300" />
+            <div className="absolute inset-0 w-8 h-8 bg-blue-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
           </div>
-          <span className="text-2xl font-bold font-space-grotesk gradient-text">
+          <span className="text-2xl font-bold font-space-grotesk bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
             zsideo
           </span>
         </motion.div>
@@ -72,11 +72,11 @@ export default function Navbar() {
             >
               <Link 
                 href={item.href} 
-                className="text-gray-300 hover:text-white transition-colors duration-300 font-medium"
+                className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium"
               >
                 {item.name}
               </Link>
-              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#3ac4ec] to-[#ef4444] group-hover:w-full transition-all duration-300"></div>
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300"></div>
             </motion.div>
           ))}
 
@@ -92,8 +92,8 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <button className="group relative px-6 py-3 rounded-full bg-gradient-to-r from-[#3ac4ec] to-[#ef4444] text-white font-semibold overflow-hidden glow-hover">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#ef4444] to-[#3ac4ec] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <button className="group relative px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 text-white font-semibold overflow-hidden shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center gap-2">
                 <Play className="w-4 h-4" />
                 Get Started
@@ -123,7 +123,7 @@ export default function Navbar() {
           height: isMobileMenuOpen ? "auto" : 0 
         }}
         transition={{ duration: 0.3 }}
-        className="md:hidden glass border-t border-white/10 overflow-hidden"
+        className="md:hidden bg-white/20 backdrop-blur-md border-t border-white/20 overflow-hidden"
       >
         <div className="px-6 py-4 space-y-4">
           {navItems.map((item, index) => (
@@ -139,7 +139,7 @@ export default function Navbar() {
               <Link 
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-300 hover:text-white transition-colors py-2"
+                className="block text-slate-600 hover:text-slate-900 transition-colors py-2"
               >
                 {item.name}
               </Link>
@@ -152,7 +152,7 @@ export default function Navbar() {
               opacity: isMobileMenuOpen ? 1 : 0 
             }}
             transition={{ delay: 0.4 }}
-            className="w-full mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-[#3ac4ec] to-[#ef4444] text-white font-semibold"
+            className="w-full mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 text-white font-semibold"
           >
             Get Started
           </motion.button>

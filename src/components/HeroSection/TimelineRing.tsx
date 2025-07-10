@@ -66,10 +66,10 @@ export default function TimelineRing() {
       >
         <boxGeometry args={[width, height, width]} />
         <meshStandardMaterial
-          color={isHighlight ? "#ef4444" : "#3ac4ec"}
+          color={isHighlight ? "#f87171" : "#60a5fa"}
           metalness={0.8}
           roughness={0.2}
-          emissive={isHighlight ? "#ef4444" : "#3ac4ec"}
+          emissive={isHighlight ? "#f87171" : "#60a5fa"}
           emissiveIntensity={isHighlight ? 0.3 : 0.1}
         />
       </a.mesh>
@@ -91,7 +91,7 @@ export default function TimelineRing() {
       >
         <sphereGeometry args={[0.01, 8, 8]} />
         <meshBasicMaterial
-          color="#3ac4ec"
+          color="#60a5fa"
           transparent
           opacity={0.6}
         />

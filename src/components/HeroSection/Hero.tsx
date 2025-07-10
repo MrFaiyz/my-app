@@ -86,12 +86,12 @@ export default function HeroSection() {
   }
 
   return (
-    <section ref={heroRef} className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+    <section ref={heroRef} className="relative w-full h-screen overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#3ac4ec] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-[#ef4444] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse"></div>
+        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-slate-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '4s' }}></div>
       </div>
 
       {/* 3D Canvas */}
@@ -112,13 +112,14 @@ export default function HeroSection() {
           {/* Badge */}
           <motion.div 
             variants={itemVariants}
-            className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#3ac4ec]/30 mb-6 group hover:border-[#3ac4ec]/60 transition-all duration-300"
+            className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-blue-400/30 mb-6 group hover:border-blue-400/60 transition-all duration-300"
           >
-            <Sparkles className="w-4 h-4 text-[#3ac4ec] group-hover:rotate-12 transition-transform" />
+            <Sparkles className="w-4 h-4 text-blue-400 group-hover:rotate-12 transition-transform" />
             <span className="text-sm font-medium text-[#3ac4ec] font-jetbrains-mono tracking-wider">
+            <span className="text-sm font-medium text-blue-500 font-jetbrains-mono tracking-wider">
               AI-POWERED CONTENT STUDIO
             </span>
-            <div className="w-2 h-2 bg-[#3ac4ec] rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
           </motion.div>
 
           {/* Main Title */}
@@ -128,9 +129,9 @@ export default function HeroSection() {
           >
             Create{" "}
             <span className="relative inline-block">
-              <span className="gradient-text">Viral Videos</span>
+              <span className="bg-gradient-to-r from-blue-400 via-white to-blue-300 bg-clip-text text-transparent">Viral Videos</span>
               <motion.div
-                className="absolute -inset-1 bg-gradient-to-r from-[#3ac4ec] to-[#ef4444] rounded-lg blur opacity-30"
+                className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-blue-300 rounded-lg blur opacity-30"
                 animate={{
                   scale: [1, 1.05, 1],
                   opacity: [0.3, 0.5, 0.3]
@@ -143,16 +144,16 @@ export default function HeroSection() {
               />
             </span>
             <br />
-            <span className="text-white">Effortlessly</span>
+            <span className="text-slate-100">Effortlessly</span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p 
             variants={itemVariants}
-            className="hero-subtitle text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed font-inter"
+            className="hero-subtitle text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed font-inter"
           >
             Transform your raw footage into{" "}
-            <span className="text-[#3ac4ec] font-semibold">high-impact content</span>{" "}
+            <span className="text-blue-400 font-semibold">high-impact content</span>{" "}
             with our AI-driven editing suite. Create stunning reels, shorts, and viral videos in minutes.
           </motion.p>
 
@@ -164,9 +165,9 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative px-8 py-4 rounded-full bg-gradient-to-r from-[#3ac4ec] to-[#ef4444] text-white font-bold text-lg overflow-hidden glow-hover"
+              className="group relative px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 text-white font-bold text-lg overflow-hidden shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#ef4444] to-[#3ac4ec] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center gap-3">
                 <Play className="w-5 h-5" />
                 Start Creating Now
@@ -177,7 +178,7 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group px-8 py-4 rounded-full glass border border-white/20 text-white font-semibold text-lg hover:border-[#3ac4ec]/50 transition-all duration-300"
+              className="group px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold text-lg hover:border-blue-400/50 transition-all duration-300"
             >
               <div className="flex items-center gap-3">
                 <Video className="w-5 h-5" />
@@ -189,18 +190,18 @@ export default function HeroSection() {
           {/* Stats */}
           <motion.div 
             variants={itemVariants}
-            className="hero-stats flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400"
+            className="hero-stats flex flex-wrap items-center justify-center gap-8 text-sm text-slate-300"
           >
             <div className="stat-item flex items-center gap-2">
-              <Zap className="w-4 h-4 text-[#3ac4ec]" />
+              <Zap className="w-4 h-4 text-blue-400" />
               <span className="font-jetbrains-mono">10x Faster Editing</span>
             </div>
             <div className="stat-item flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#ef4444] rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
               <span className="font-jetbrains-mono">50M+ Videos Created</span>
             </div>
             <div className="stat-item flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#f59e0b] rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-slate-400 rounded-full animate-pulse"></div>
               <span className="font-jetbrains-mono">99.9% Uptime</span>
             </div>
           </motion.div>
@@ -212,7 +213,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="flex flex-col items-center gap-2 text-slate-300"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
@@ -221,11 +222,11 @@ export default function HeroSection() {
         >
           <span className="text-xs font-jetbrains-mono tracking-wider">SCROLL TO EXPLORE</span>
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <motion.div
+        <div className="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center">
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="w-1 h-3 bg-[#3ac4ec] rounded-full mt-2"
-            />
+            className="w-1 h-3 bg-blue-400 rounded-full mt-2"
           </div>
         </motion.div>
       </motion.div>

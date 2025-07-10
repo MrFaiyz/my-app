@@ -56,14 +56,14 @@ export default function Scene3D() {
         onUpdate: (self) => {
           const progress = self.progress
           
-          // Camera movement
-          camera.position.x = THREE.MathUtils.lerp(0, -3, progress)
-          camera.position.y = THREE.MathUtils.lerp(1.5, 2, progress)
-          camera.position.z = THREE.MathUtils.lerp(5, 6, progress)
+          // Camera zoom out and slight movement
+          camera.position.x = THREE.MathUtils.lerp(0, -1, progress)
+          camera.position.y = THREE.MathUtils.lerp(1.5, 2.5, progress)
+          camera.position.z = THREE.MathUtils.lerp(5, 12, progress)
           
-          // Camera rotation
-          camera.rotation.x = THREE.MathUtils.lerp(0, -0.1, progress)
-          camera.rotation.y = THREE.MathUtils.lerp(0, 0.3, progress)
+          // Subtle camera rotation
+          camera.rotation.x = THREE.MathUtils.lerp(0, -0.05, progress)
+          camera.rotation.y = THREE.MathUtils.lerp(0, 0.1, progress)
           
           camera.updateProjectionMatrix()
         }
@@ -100,7 +100,7 @@ export default function Scene3D() {
         shadow-camera-bottom={-10}
       />
       <pointLight position={[-5, 5, -5]} intensity={0.5} color="#3ac4ec" />
-      <pointLight position={[5, -5, 5]} intensity={0.3} color="#ef4444" />
+      <pointLight position={[5, -5, 5]} intensity={0.3} color="#60a5fa" />
 
       {/* Environment */}
       <Environment preset="studio" />

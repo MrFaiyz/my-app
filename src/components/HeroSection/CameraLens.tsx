@@ -64,7 +64,7 @@ export default function CameraLens() {
       <mesh position={[0, 0, 0]} scale={1.2}>
         <sphereGeometry args={[0.15, 32, 32]} />
         <meshBasicMaterial 
-          color="#3ac4ec" 
+          color="#60a5fa" 
           transparent 
           opacity={0.1}
         />
