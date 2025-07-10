@@ -115,7 +115,6 @@ export default function HeroSection() {
             className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-blue-400/30 mb-6 group hover:border-blue-400/60 transition-all duration-300"
           >
             <Sparkles className="w-4 h-4 text-blue-400 group-hover:rotate-12 transition-transform" />
-            <span className="text-sm font-medium text-[#3ac4ec] font-jetbrains-mono tracking-wider">
             <span className="text-sm font-medium text-blue-500 font-jetbrains-mono tracking-wider">
               AI-POWERED CONTENT STUDIO
             </span>
@@ -232,6 +231,3 @@ export default function HeroSection() {
       </motion.div>
     </section>
   )
-}
-  )
-}
