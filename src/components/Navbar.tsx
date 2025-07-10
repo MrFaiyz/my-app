@@ -35,7 +35,7 @@ export default function Navbar() {
       }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-white/20 backdrop-blur-md border-b border-white/20' 
+          ? 'bg-white/80 backdrop-blur-sm border-b border-white/30' 
           : 'bg-transparent'
       }`}
     >
@@ -72,7 +72,9 @@ export default function Navbar() {
             >
               <Link 
                 href={item.href} 
-                className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium"
+                className={`transition-colors duration-300 font-medium ${
+                  isScrolled ? 'text-slate-700 hover:text-slate-900' : 'text-white hover:text-blue-200'
+                }`}
               >
                 {item.name}
               </Link>
@@ -109,7 +111,9 @@ export default function Navbar() {
           transition={{ delay: 0.5 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-white"
+          className={`md:hidden p-2 transition-colors ${
+            isScrolled ? 'text-slate-700' : 'text-white'
+          }`}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </motion.button>
@@ -123,7 +127,7 @@ export default function Navbar() {
           height: isMobileMenuOpen ? "auto" : 0 
         }}
         transition={{ duration: 0.3 }}
-        className="md:hidden bg-white/20 backdrop-blur-md border-t border-white/20 overflow-hidden"
+        className="md:hidden bg-white/80 backdrop-blur-sm border-t border-white/30 overflow-hidden"
       >
         <div className="px-6 py-4 space-y-4">
           {navItems.map((item, index) => (
@@ -139,7 +143,7 @@ export default function Navbar() {
               <Link 
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-slate-600 hover:text-slate-900 transition-colors py-2"
+                className="block text-slate-700 hover:text-slate-900 transition-colors py-2"
               >
                 {item.name}
               </Link>

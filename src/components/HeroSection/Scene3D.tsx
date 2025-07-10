@@ -100,10 +100,10 @@ export default function Scene3D() {
         shadow-camera-bottom={-10}
       />
       <pointLight position={[-5, 5, -5]} intensity={0.5} color="#3ac4ec" />
-      <pointLight position={[5, -5, 5]} intensity={0.3} color="#60a5fa" />
+      <pointLight position={[5, -5, 5]} intensity={0.3} color="#3b82f6" />
 
       {/* Environment */}
-      <Environment preset="studio" />
+      <Environment preset="city" />
       
       {/* Ground shadows */}
       <ContactShadows
@@ -115,19 +115,9 @@ export default function Scene3D() {
         color="#000000"
       />
 
-      {/* 3D Objects */}
+      {/* Main 3D Objects */}
       <CameraLens />
       <TimelineRing />
-
-      {/* Additional atmospheric elements */}
-      <mesh position={[0, 0, -10]} scale={[20, 20, 1]}>
-        <planeGeometry />
-        <meshBasicMaterial 
-          color="#000000" 
-          transparent 
-          opacity={0.8}
-        />
-      </mesh>
     </group>
   )
 }
