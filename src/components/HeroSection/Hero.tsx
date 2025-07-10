@@ -213,25 +213,23 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="flex flex-col items-center gap-2 text-slate-300"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-slate-300"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2 text-gray-400"
+          className="flex flex-col items-center gap-2"
         >
           <span className="text-xs font-jetbrains-mono tracking-wider">SCROLL TO EXPLORE</span>
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-        <div className="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center">
+          <div className="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center">
+            <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1 h-3 bg-[#3ac4ec] rounded-full mt-2"
-            className="w-1 h-3 bg-blue-400 rounded-full mt-2"
+              className="w-1 h-3 bg-blue-400 rounded-full mt-2"
+            />
           </div>
         </motion.div>
       </motion.div>
     </section>
-  )
-}
   )
 }
