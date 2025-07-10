@@ -142,13 +142,13 @@ export default function Services() {
     <section 
       id="services"
       ref={sectionRef} 
-      className="relative w-full min-h-screen bg-gradient-to-br from-black via-gray-900 to-black py-20 px-8"
+      className="relative w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-20 px-8"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-[#3ac4ec] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-[#ef4444] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
-        <div className="absolute top-2/3 left-1/2 w-96 h-96 bg-[#f59e0b] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute top-2/3 left-1/2 w-96 h-96 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -160,18 +160,18 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#3ac4ec]/30 mb-6"
           >
-            <Star className="w-4 h-4 text-[#3ac4ec]" />
-            <span className="text-sm font-medium text-[#3ac4ec] font-jetbrains-mono tracking-wider">
+            <Star className="w-4 h-4 text-blue-600" />
+            <span className="text-sm font-medium text-blue-600 font-jetbrains-mono tracking-wider">
               PREMIUM SERVICES
             </span>
           </motion.div>
 
           <h2 className="text-4xl md:text-6xl font-bold font-space-grotesk mb-6">
             Everything You Need to{" "}
-            <span className="gradient-text">Create</span>
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Create</span>
           </h2>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             From raw footage to viral content - our comprehensive suite of AI-powered tools 
             handles every aspect of video production with professional quality.
           </p>
@@ -179,20 +179,20 @@ export default function Services() {
 
         {/* Platform Support */}
         <div className="flex items-center justify-center gap-8 mb-16">
-          <span className="text-gray-400 font-jetbrains-mono text-sm">OPTIMIZED FOR</span>
+          <span className="text-slate-500 font-jetbrains-mono text-sm">OPTIMIZED FOR</span>
           {platforms.map((platform, index) => (
             <motion.div
               key={platform.name}
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="platform-icon flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10"
+              className="platform-icon flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-white/40"
             >
               <platform.icon 
                 className="w-5 h-5" 
                 style={{ color: platform.color }}
               />
-              <span className="text-sm font-medium text-white">{platform.name}</span>
+              <span className="text-sm font-medium text-slate-700">{platform.name}</span>
             </motion.div>
           ))}
         </div>
@@ -203,7 +203,7 @@ export default function Services() {
             <motion.div
               key={service.title}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="service-card relative glass p-8 rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-500 group overflow-hidden"
+              className="service-card relative bg-white/60 backdrop-blur-md p-8 rounded-3xl border border-white/40 hover:border-blue-300/50 transition-all duration-500 group overflow-hidden shadow-lg"
             >
               {/* Popular Badge */}
               {service.popular && (
@@ -231,18 +231,18 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-4 font-space-grotesk">
+                <h3 className="text-2xl font-bold text-slate-800 mb-4 font-space-grotesk">
                   {service.title}
                 </h3>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <p className="text-slate-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Features */}
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-3 text-sm text-gray-400">
+                    <li key={featureIndex} className="flex items-center gap-3 text-sm text-slate-600">
                       <CheckCircle className="w-4 h-4 text-[#10b981] flex-shrink-0" />
                       {feature}
                     </li>
@@ -252,7 +252,7 @@ export default function Services() {
                 {/* CTA */}
                 <motion.button
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-2 text-white font-semibold group-hover:text-[#3ac4ec] transition-colors"
+                  className="flex items-center gap-2 text-slate-700 font-semibold group-hover:text-blue-600 transition-colors"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4" />
@@ -269,10 +269,10 @@ export default function Services() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center mt-16"
         >
-          <h3 className="text-2xl font-bold text-white mb-4 font-space-grotesk">
+          <h3 className="text-2xl font-bold text-slate-800 mb-4 font-space-grotesk">
             Ready to Transform Your Content?
           </h3>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
             Join thousands of creators who are already using Zsideo to create viral content effortlessly.
           </p>
           <motion.button

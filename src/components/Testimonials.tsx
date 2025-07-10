@@ -137,12 +137,12 @@ export default function Testimonials() {
     <section 
       id="testimonials"
       ref={sectionRef} 
-      className="relative w-full min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20 px-8"
+      className="relative w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-20 px-8"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#3ac4ec] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#ef4444] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -154,18 +154,18 @@ export default function Testimonials() {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#3ac4ec]/30 mb-6"
           >
-            <Quote className="w-4 h-4 text-[#3ac4ec]" />
-            <span className="text-sm font-medium text-[#3ac4ec] font-jetbrains-mono tracking-wider">
+            <Quote className="w-4 h-4 text-blue-600" />
+            <span className="text-sm font-medium text-blue-600 font-jetbrains-mono tracking-wider">
               SUCCESS STORIES
             </span>
           </motion.div>
 
           <h2 className="text-4xl md:text-6xl font-bold font-space-grotesk mb-6">
             Loved by{" "}
-            <span className="gradient-text">Creators</span>
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Creators</span>
           </h2>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Join thousands of content creators, marketers, and brands who have transformed 
             their video content with Zsideo's AI-powered platform.
           </p>
@@ -186,10 +186,10 @@ export default function Testimonials() {
                   <stat.icon className="w-6 h-6 text-white" />
                 </div>
               </div>
-              <div className="text-3xl font-bold gradient-text font-space-grotesk mb-2">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-space-grotesk mb-2">
                 {stat.value}
               </div>
-              <p className="text-gray-400 font-jetbrains-mono text-sm">{stat.label}</p>
+              <p className="text-slate-500 font-jetbrains-mono text-sm">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -203,7 +203,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="glass p-8 md:p-12 rounded-3xl border border-white/10"
+              className="bg-white/60 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/40 shadow-lg"
             >
               <div className="flex flex-col md:flex-row items-start gap-8">
                 {/* Avatar & Info */}
@@ -225,9 +225,9 @@ export default function Testimonials() {
                 {/* Content */}
                 <div className="flex-1">
                   {/* Quote */}
-                  <Quote className="w-8 h-8 text-[#3ac4ec] mb-4" />
+                  <Quote className="w-8 h-8 text-blue-600 mb-4" />
                   
-                  <blockquote className="text-xl md:text-2xl text-white leading-relaxed mb-6 font-inter">
+                  <blockquote className="text-xl md:text-2xl text-slate-800 leading-relaxed mb-6 font-inter">
                     "{testimonials[currentTestimonial].content}"
                   </blockquote>
 
@@ -241,13 +241,13 @@ export default function Testimonials() {
                   {/* Author Info */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="text-lg font-bold text-white font-space-grotesk">
+                      <h4 className="text-lg font-bold text-slate-800 font-space-grotesk">
                         {testimonials[currentTestimonial].name}
                       </h4>
-                      <p className="text-gray-400">
+                      <p className="text-slate-600">
                         {testimonials[currentTestimonial].role} • {testimonials[currentTestimonial].company}
                       </p>
-                      <p className="text-[#3ac4ec] text-sm font-jetbrains-mono">
+                      <p className="text-blue-600 text-sm font-jetbrains-mono">
                         {testimonials[currentTestimonial].followers} followers
                       </p>
                     </div>
@@ -256,10 +256,10 @@ export default function Testimonials() {
                     <div className="hidden md:flex items-center gap-4">
                       {Object.entries(testimonials[currentTestimonial].metrics).map(([key, value]) => (
                         <div key={key} className="text-center">
-                          <div className="text-lg font-bold text-[#3ac4ec] font-space-grotesk">
+                          <div className="text-lg font-bold text-blue-600 font-space-grotesk">
                             {value}
                           </div>
-                          <div className="text-xs text-gray-400 font-jetbrains-mono">
+                          <div className="text-xs text-slate-500 font-jetbrains-mono">
                             {key.replace('_', ' ')}
                           </div>
                         </div>
@@ -275,7 +275,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-between mt-8">
             <button
               onClick={prevTestimonial}
-              className="w-12 h-12 rounded-full glass border border-white/20 flex items-center justify-center text-white hover:border-[#3ac4ec]/50 transition-colors"
+              className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-white/40 flex items-center justify-center text-slate-700 hover:border-blue-400/70 transition-colors"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -288,8 +288,8 @@ export default function Testimonials() {
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     index === currentTestimonial 
-                      ? 'bg-[#3ac4ec] w-8' 
-                      : 'bg-gray-600 hover:bg-gray-500'
+                      ? 'bg-blue-600 w-8' 
+                      : 'bg-slate-400 hover:bg-slate-500'
                   }`}
                 />
               ))}
@@ -297,7 +297,7 @@ export default function Testimonials() {
 
             <button
               onClick={nextTestimonial}
-              className="w-12 h-12 rounded-full glass border border-white/20 flex items-center justify-center text-white hover:border-[#3ac4ec]/50 transition-colors"
+              className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-white/40 flex items-center justify-center text-slate-700 hover:border-blue-400/70 transition-colors"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -311,10 +311,10 @@ export default function Testimonials() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center mt-16"
         >
-          <h3 className="text-2xl font-bold text-white mb-4 font-space-grotesk">
+          <h3 className="text-2xl font-bold text-slate-800 mb-4 font-space-grotesk">
             Ready to Join Them?
           </h3>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
             Start creating viral content today and see why creators love Zsideo.
           </p>
           <motion.button

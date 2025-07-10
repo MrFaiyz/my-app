@@ -133,12 +133,12 @@ export default function About() {
     <section 
       id="about"
       ref={sectionRef} 
-      className="relative w-full min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center px-8 py-20"
+      className="relative w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center px-8 py-20"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#3ac4ec] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-[#ef4444] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
       </div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -166,24 +166,24 @@ export default function About() {
             className="space-y-6"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#3ac4ec]/30">
-              <Award className="w-4 h-4 text-[#3ac4ec]" />
-              <span className="text-sm font-medium text-[#3ac4ec] font-jetbrains-mono tracking-wider">
+              <Award className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-medium text-blue-600 font-jetbrains-mono tracking-wider">
                 INDUSTRY LEADING
               </span>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-bold font-space-grotesk">
               About{" "}
-              <span className="gradient-text">Zsideo</span>
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Zsideo</span>
             </h2>
 
-            <p className="text-xl text-gray-300 leading-relaxed font-inter">
+            <p className="text-xl text-slate-600 leading-relaxed font-inter">
               We're revolutionizing content creation with cutting-edge AI technology. 
               Our platform transforms raw footage into viral-ready content, empowering 
               creators to focus on what they do best while we handle the technical magic.
             </p>
 
-            <p className="text-lg text-gray-400 leading-relaxed">
+            <p className="text-lg text-slate-500 leading-relaxed">
               From TikTok shorts to Instagram reels, YouTube videos to brand content - 
               Zsideo adapts to every platform's unique requirements and audience preferences.
             </p>
@@ -200,18 +200,18 @@ export default function About() {
                 className="text-center space-y-2"
               >
                 <div className="flex items-center justify-center mb-2">
-                  <stat.icon className="w-6 h-6 text-[#3ac4ec]" />
+                  <stat.icon className="w-6 h-6 text-blue-600" />
                 </div>
                 <div className="text-2xl md:text-3xl font-bold font-space-grotesk">
                   <span 
-                    className="stat-number gradient-text"
+                    className="stat-number bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
                     data-value={stat.number}
                   >
                     0
                   </span>
-                  <span className="text-[#3ac4ec]">{stat.suffix}</span>
+                  <span className="text-blue-600">{stat.suffix}</span>
                 </div>
-                <p className="text-sm text-gray-400 font-jetbrains-mono">{stat.label}</p>
+                <p className="text-sm text-slate-500 font-jetbrains-mono">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -222,7 +222,7 @@ export default function About() {
               <motion.div
                 key={feature.title}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="feature-card glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 group"
+                className="feature-card bg-white/60 backdrop-blur-md p-6 rounded-2xl border border-white/40 hover:border-blue-300/50 transition-all duration-300 group shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <div 
@@ -235,10 +235,10 @@ export default function About() {
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-2 font-space-grotesk">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2 font-space-grotesk">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
